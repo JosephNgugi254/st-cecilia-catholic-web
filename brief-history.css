@@ -29,7 +29,8 @@ body {
 
 .aboutpage-body h2{
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    margin-left: 2rem;
 }
 
 #content-section {
@@ -57,6 +58,14 @@ body {
     margin-left: 1rem;
 }
 
+.outstation-main-header {
+    display: flex;
+    justify-content: left;
+    margin-top: 8rem;
+    margin-bottom: 0;
+}
+
+
 @media (max-width: 768px) {
     body {
         height: 100%;
@@ -65,7 +74,7 @@ body {
     .about-image {
       float: none;
       margin:0 1rem;
-      margin-top: 9rem;             
+      margin-top: 2rem;             
       text-align: center; /* Center the image */
     }
   
@@ -79,7 +88,21 @@ body {
 
     h2{
       margin: 0 0.5rem;
-      font-size: 20px;
+      font-size: 1.5rem;
+    }
+
+    .aboutpage-body h2{
+        display: flex;
+        justify-content: left; 
+        margin: 0 ;  
+        width: 100%;    
+    }
+
+    .outstation-main-header {
+        display: flex;
+        justify-content: left;
+        margin-top: 8rem;
+        margin-bottom: 0;
     }
 
     p {
