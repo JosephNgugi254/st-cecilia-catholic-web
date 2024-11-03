@@ -19,8 +19,8 @@ class SpecialHeader extends HTMLElement {
         this.innerHTML = `
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand logo" href="./index.html">
-                <img src="./images/logo-st cecilia parish.PNG" alt="st cecilia logo" max-width="300" height="100" style="margin-bottom: -5px;">
+            <a class="navbar-brand" href="index.html">
+                <img src="./images/logo-st cecilia parish.PNG" alt="Logo">
             </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -114,6 +114,15 @@ class SpecialHeader extends HTMLElement {
               </li>
     
             </ul>
+            
+            <div class="navbar-calendar">
+                <button id="calendarBtn" aria-label="Open Calendar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                    </svg>
+                </button>
+            </div>
           </div>
         </div>   
         
@@ -214,3 +223,48 @@ scrollTopBtn.onclick = function() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 };
+
+// Calendar functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const calendarBtn = document.getElementById('calendarBtn');
+    const mobileCalendarBtn = document.getElementById('mobilecalendarBtn');
+    const calendarPopup = document.getElementById('calendarPopup');
+    const calendarOverlay = document.getElementById('calendarOverlay');
+    const closeCalendar = document.querySelector('.close-calendar');
+
+    function toggleCalendar(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
+        const isVisible = calendarPopup.style.display === 'block';
+        calendarPopup.style.display = isVisible ? 'none' : 'block';
+        calendarOverlay.style.display = isVisible ? 'none' : 'block';
+        document.body.style.overflow = isVisible ? 'auto' : 'hidden';
+    }
+
+    // Add event listeners to both buttons
+    if (calendarBtn) {
+        calendarBtn.addEventListener('click', toggleCalendar);
+    }
+    
+    if (mobileCalendarBtn) {
+        mobileCalendarBtn.addEventListener('click', toggleCalendar);
+    }
+
+    if (calendarOverlay) {
+        calendarOverlay.addEventListener('click', toggleCalendar);
+    }
+
+    if (closeCalendar) {
+        closeCalendar.addEventListener('click', toggleCalendar);
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && calendarPopup.style.display === 'block') {
+            toggleCalendar();
+        }
+    });
+});

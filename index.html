@@ -19,10 +19,11 @@
       <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./images/photo 4.jpg" class="d-block w-100" style="height: fit-content;" alt="...">
+            <img src="./images/photo 4.jpg" class="d-block w-100" style="height: fit-content;" alt="..."/>
             <div class="carousel-caption">                               
                 <p class="text-white message-title ">WELCOME TO<br>
-                  ST CECILIA CATHOLIC CHURCH</p>                                 
+                  ST CECILIA CATHOLIC CHURCH
+                </p>                                 
             </div>
           </div>
           <div class="carousel-item">
@@ -117,6 +118,14 @@
       </div>
     </section>
 
+    <!-- Calendar Button and Popup -->
+    <div class="calendar-overlay" id="calendarOverlay"></div>
+    <div class="calendar-popup" id="calendarPopup">
+      <span class="close-calendar">&times;</span>
+      <h2 class="mb-4">Calendar of Events</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?height=500&wkst=1&ctz=Africa%2FNairobi&showPrint=0&src=YWI0MmFlMzgzOGU2OGE0NzRjZTM1NjQ3YzcyZWM3YzZkNGQ3YmY0NTg5ZWNjMzQ0YjczNzE1ZDdiNmQwYjhjNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23AD1457" style="border:solid 1px #777" width="600" height="500" frameborder="0" scrolling="no"></iframe>
+    </div>
+
     <!-- section 4-info -->
     <section class="info-section">
       <div class="container">
@@ -160,5 +169,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
     <script src="./index.js"></script>
     <script src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <!-- Mobile Calendar Button -->
+    <button id="mobilecalendarBtn" class="mobile-calendar-btn" aria-label="Open Calendar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="currentColor" class="bi bi-calendar-event" viewBox="0 0 16 16">
+            <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+        </svg>
+    </button>
+
+    <!-- Calendar Popup and Overlay (keep these) -->
+    <div class="calendar-overlay" id="calendarOverlay"></div>
+    <div class="calendar-popup" id="calendarPopup">
+        <span class="close-calendar">&times;</span>
+        <h2 class="mb-4">Calendar of Events</h2>
+        <iframe src="YOUR_CALENDAR_URL" frameborder="0" scrolling="no"></iframe>
+    </div>
   </body>
 </html>
