@@ -273,16 +273,20 @@ a {
   }
   
   #welcome-message-section .paragraph-div p {
-    color: black;
+    display: flex;    
+    color: black;    
   }
   
 .father-image img {
     width: 100%;
-    height: auto;
+    height:50rem;
     object-fit: cover;
     border-radius: 2rem;
 }
 
+.father-image p{    
+    text-align: center;
+}
   .popup p{
     font-size: 1.2rem;
   }
